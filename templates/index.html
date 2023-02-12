@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUDLFT Registration</title>
 </head>
-<body>
+<body >
     <h1>Welcome to the GUDLFT Registration Portal!</h1>
     Please enter your secretary email to continue:
     <form action="showSummary" method="post">
@@ -15,5 +15,17 @@
     {% if erreur %}
     <p style="color: red;">Email Incorrect</p>
     {% endif %}
+    <table style="border: 2px solid black;" style="text-align: center;">
+        <tr>
+            <th>Club Name</th>
+            <th>Points</th>
+        </tr>
+        {% for club in clubs %}
+            <tr>
+                <td style="border: 1px solid black;">{{ club['name'] }}</td>
+                <td style="border: 1px solid black;">{{ club['points'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
